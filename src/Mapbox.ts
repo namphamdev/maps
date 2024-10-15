@@ -23,6 +23,7 @@ export { default as LocationPuck } from './components/LocationPuck';
 export { default as VectorSource } from './components/VectorSource';
 export { ShapeSource } from './components/ShapeSource';
 export { default as RasterSource } from './components/RasterSource';
+export { default as RasterArraySource } from './components/RasterArraySource';
 export { default as RasterDemSource } from './components/RasterDemSource';
 export { default as ImageSource } from './components/ImageSource';
 export { Viewport } from './components/Viewport';
