@@ -4,6 +4,7 @@ import { FilterExpression } from '../utils/MapboxStyles';
 
 import CircleLayer from './CircleLayer';
 import RasterLayer from './RasterLayer';
+import RasterParticleLayer from './RasterParticleLayer';
 import { SymbolLayer } from './SymbolLayer';
 import LineLayer from './LineLayer';
 import FillLayer from './FillLayer';
@@ -51,6 +52,8 @@ function getLayerComponentType(layer: { type: string }) {
       return SymbolLayer;
     case 'raster':
       return RasterLayer;
+    case 'raster-particle':
+      return RasterParticleLayer;
     case 'line':
       return LineLayer;
     case 'fill':

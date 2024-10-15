@@ -38,6 +38,7 @@ export { default as SkyLayer } from './components/SkyLayer';
 export { default as ModelLayer } from './components/ModelLayer';
 export { SymbolLayer } from './components/SymbolLayer';
 export { default as RasterLayer } from './components/RasterLayer';
+export { default as RasterParticleLayer } from './components/RasterParticleLayer';
 export { default as BackgroundLayer } from './components/BackgroundLayer';
 export { default as CustomLocationProvider } from './components/CustomLocationProvider';
 export { Terrain } from './components/Terrain';
@@ -76,6 +77,7 @@ export type {
   HeatmapLayerStyleProps as HeatmapLayerStyle,
   FillExtrusionLayerStyleProps as FillExtrusionLayerStyle,
   RasterLayerStyleProps as RasterLayerStyle,
+  RasterParticleLayerStyleProps as RasterParticleLayerStyle,
   HillshadeLayerStyleProps as HillshadeLayerStyle,
   BackgroundLayerStyleProps as BackgroundLayerStyle,
   SkyLayerStyleProps as SkyLayerStyle,
