@@ -34,6 +34,7 @@ import com.rnmapbox.rnmbx.components.styles.layers.RNMBXHeatmapLayerManager
 import com.rnmapbox.rnmbx.components.styles.layers.RNMBXLineLayerManager
 import com.rnmapbox.rnmbx.components.styles.layers.RNMBXModelLayerManager
 import com.rnmapbox.rnmbx.components.styles.layers.RNMBXRasterLayerManager
+import com.rnmapbox.rnmbx.components.styles.layers.RNMBXRasterParticleLayerManager
 import com.rnmapbox.rnmbx.components.styles.layers.RNMBXSkyLayerManager
 import com.rnmapbox.rnmbx.components.styles.layers.RNMBXSymbolLayerManager
 import com.rnmapbox.rnmbx.components.styles.light.RNMBXLightManager
@@ -154,6 +155,7 @@ class RNMBXPackage : TurboReactPackage() {
         managers.add(RNMBXCircleLayerManager())
         managers.add(RNMBXSymbolLayerManager())
         managers.add(RNMBXRasterLayerManager())
+        managers.add(RNMBXRasterParticleLayerManager())
         managers.add(RNMBXSkyLayerManager())
         managers.add(RNMBXTerrainManager())
         managers.add(RNMBXAtmosphereManager())

@@ -2035,6 +2035,58 @@ export interface TerrainLayerStyleProps {
   exaggeration?: Value<number, ['zoom']>;
 }
 
+export interface RasterParticleLayerStyleProps {
+  /**
+   * Whether this layer is displayed.
+   */
+  visibility?: Value<Enum<VisibilityEnum, VisibilityEnumValues>>;
+  /**
+   * Displayed band of raster array source layer
+   */
+  rasterParticleArrayBand?: string[];
+
+  /**
+   * Defines a color map by which to colorize a raster particle layer, 
+   * parameterized by the ["raster-particle-speed"] expression and 
+   * evaluated at 256 uniformly spaced steps over the range specified by raster-particle-max-speed.
+   */
+  rasterParticleColor?: Value<string, ['raster-particle-speed']>;
+  /**
+   * Defines the amount of particles per tile. Default value: 512. Minimum value: 1.
+   */
+  rasterParticleCount?: number;
+
+  /**
+   * Defines defines the opacity coefficient applied to the faded particles in each frame. 
+   * In practice, this property controls the length of the particle tail. Default value: 0.98. Value range: 0, 1
+   */
+  rasterParticleFadeOpacityFactor?: number;
+  /**
+   * Defines the transition of rasterParticleFadeOpacityFactor. Default value: 0.98. Value range: 0, 1
+   */
+  rasterParticleFadeOpacityFactorTransition?: Transition;
+
+  /**
+   * Defines the maximum speed for particles. 
+   * Velocities with magnitudes equal to or exceeding this value are clamped to the max value. Default value: 1. Minimum value: 1.
+   */
+  rasterParticleMaxSpeed?: number;
+  /**
+   * Defines a coefficient for a time period at which particles will restart at a random position, 
+   * to avoid degeneration (empty areas without particles). Default value: 0.8. Value range: 0, 1
+   */
+  rasterParticleResetRateFactor?: number;
+
+  /**
+   * Defines a coefficient for the speed of particles’ motion. Default value: 0.2. Value range: 0, 1
+   */
+  rasterParticleSpeedFactor?: number;
+  /**
+   * Defines the transition of rasterParticleSpeedFactor. Default value: 0.2. Value range: 0, 1
+   */
+  rasterParticleSpeedFactorTransition?: Transition;
+}
+
 export type AllLayerStyleProps =
   | FillLayerStyleProps
   | LineLayerStyleProps
@@ -2049,4 +2101,5 @@ export type AllLayerStyleProps =
   | SkyLayerStyleProps
   | LightLayerStyleProps
   | AtmosphereLayerStyleProps
-  | TerrainLayerStyleProps;
+  | TerrainLayerStyleProps
+  | RasterParticleLayerStyleProps;

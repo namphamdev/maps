@@ -13,6 +13,7 @@ import com.mapbox.maps.extension.style.layers.generated.SkyLayer
 // import com.mapbox.maps.extension.style.layers.generated.PropertyFactory
 // import com.mapbox.maps.extension.style.layers.generated.PropertyValue
 import com.mapbox.maps.extension.style.layers.generated.RasterLayer
+import com.mapbox.maps.extension.style.layers.generated.RasterParticleLayer
 import com.mapbox.maps.extension.style.layers.generated.SymbolLayer
 import com.mapbox.maps.extension.style.layers.generated.HeatmapLayer
 import com.mapbox.maps.extension.style.layers.generated.HillshadeLayer
@@ -604,6 +605,44 @@ object RNMBXStyleFactory {
                 setRasterColorRange(layer, styleValue)
                 "rasterColorRangeTransition" ->
                 setRasterColorRangeTransition(layer, styleValue)
+          }
+        } catch (e: MapboxStyleException) {
+          Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")
+        }
+      }
+    }
+    fun setRasterParticleLayerStyle(layer: RasterParticleLayer, style: RNMBXStyle ) {
+      val styleKeys = style.allStyleKeys
+
+      if (styleKeys.isEmpty()) {
+        return
+      }
+
+      for (styleKey in styleKeys) {
+        try {
+          val styleValue = style.getStyleValueForKey(styleKey)
+
+          when (styleKey) {
+              "visibility" ->
+                setVisibility(layer, styleValue)
+              "rasterParticleArrayBand" ->
+                rasterParticleArrayBand(layer, styleValue)
+                "rasterParticleColor" ->
+                rasterParticleColor(layer, styleValue)
+              "rasterParticleCount" ->
+                rasterParticleCount(layer, styleValue)
+                "rasterParticleFadeOpacityFactor" ->
+                rasterParticleFadeOpacityFactor(layer, styleValue)
+              "rasterParticleFadeOpacityFactorTransition" ->
+                rasterParticleFadeOpacityFactorTransition(layer, styleValue)
+                "rasterParticleMaxSpeed" ->
+                rasterParticleMaxSpeed(layer, styleValue)
+              "rasterParticleResetRateFactor" ->
+                rasterParticleResetRateFactor(layer, styleValue)
+                "rasterParticleSpeedFactor" ->
+                rasterParticleSpeedFactor(layer, styleValue)
+              "rasterParticleSpeedFactorTransition" ->
+                rasterParticleSpeedFactorTransition(layer, styleValue)
           }
         } catch (e: MapboxStyleException) {
           Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")

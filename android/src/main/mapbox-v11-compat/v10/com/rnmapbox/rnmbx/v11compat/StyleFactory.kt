@@ -9,11 +9,24 @@ import com.mapbox.maps.extension.style.layers.generated.FillLayer
 import com.mapbox.maps.extension.style.layers.generated.LineLayer
 import com.mapbox.maps.extension.style.layers.generated.ModelLayer
 import com.mapbox.maps.extension.style.layers.generated.RasterLayer
+import com.mapbox.maps.extension.style.layers.generated.RasterParticleLayer
 import com.mapbox.maps.extension.style.layers.generated.SymbolLayer
 import com.mapbox.maps.extension.style.types.StyleTransition
 
 internal fun RasterLayer.rasterColor(rasterColor: Int) {
     this.rasterColor(Expression.color(rasterColor))
+}
+
+internal fun RasterParticleLayer.rasterParticleColor(rasterParticleColor: Int) {
+    this.rasterParticleColor(Expression.color(rasterParticleColor))
+}
+
+internal fun RasterParticleLayer.rasterParticleFadeOpacityFactorTransition(rasterParticleFadeOpacityFactorTransition: StyleTransition) {
+    this.rasterParticleFadeOpacityFactorTransition(rasterParticleFadeOpacityFactorTransition)
+}
+
+internal fun RasterParticleLayer.rasterParticleSpeedFactorTransition(rasterParticleSpeedFactorTransition: StyleTransition) {
+    this.rasterParticleSpeedFactorTransition(rasterParticleSpeedFactorTransition)
 }
 
 internal fun ModelLayer.modelOpacity(expression: Expression) {
