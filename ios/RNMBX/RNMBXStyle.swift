@@ -464,6 +464,8 @@ func fillExtrusionLayer(layer: inout FillExtrusionLayer, reactStyle:Dictionary<S
 
     if (prop == "visibility") {
       self.setFillExtrusionStyleLayerVisibility(&layer, styleValue:styleValue);
+    } else if (prop == "fillExtrusionEdgeRadius") {
+      self.setFillExtrusionEdgeRadius(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionOpacity") {
       self.setFillExtrusionOpacity(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionOpacityTransition") {
@@ -498,6 +500,14 @@ func fillExtrusionLayer(layer: inout FillExtrusionLayer, reactStyle:Dictionary<S
       self.setFillExtrusionBaseTransition(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionVerticalGradient") {
       self.setFillExtrusionVerticalGradient(&layer, styleValue:styleValue);
+    } else if (prop == "fillExtrusionAmbientOcclusionIntensity") {
+      self.setFillExtrusionAmbientOcclusionIntensity(&layer, styleValue:styleValue);
+    } else if (prop == "fillExtrusionAmbientOcclusionIntensityTransition") {
+      self.setFillExtrusionAmbientOcclusionIntensityTransition(&layer, styleValue:styleValue);
+    } else if (prop == "fillExtrusionAmbientOcclusionRadius") {
+      self.setFillExtrusionAmbientOcclusionRadius(&layer, styleValue:styleValue);
+    } else if (prop == "fillExtrusionAmbientOcclusionRadiusTransition") {
+      self.setFillExtrusionAmbientOcclusionRadiusTransition(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionRoundedRoof") {
       self.setFillExtrusionRoundedRoof(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionAmbientOcclusionWallRadius") {
@@ -538,6 +548,10 @@ func fillExtrusionLayer(layer: inout FillExtrusionLayer, reactStyle:Dictionary<S
       self.setFillExtrusionVerticalScaleTransition(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionCutoffFadeRange") {
       self.setFillExtrusionCutoffFadeRange(&layer, styleValue:styleValue);
+    } else if (prop == "fillExtrusionEmissiveStrength") {
+      self.setFillExtrusionEmissiveStrength(&layer, styleValue:styleValue);
+    } else if (prop == "fillExtrusionEmissiveStrengthTransition") {
+      self.setFillExtrusionEmissiveStrengthTransition(&layer, styleValue:styleValue);
     } else {
       Logger.log(level:.error, message: "Unexpected property \(prop) for layer: fill-extrusion")
     }
@@ -599,8 +613,53 @@ func rasterLayer(layer: inout RasterLayer, reactStyle:Dictionary<String, Any>, o
       self.setRasterColorRange(&layer, styleValue:styleValue);
     } else if (prop == "rasterColorRangeTransition") {
       self.setRasterColorRangeTransition(&layer, styleValue:styleValue);
+    } else if (prop == "rasterEmissiveStrength") {
+      self.setRasterEmissiveStrength(&layer, styleValue:styleValue);
+    } else if (prop == "rasterEmissiveStrengthTransition") {
+      self.setRasterEmissiveStrengthTransition(&layer, styleValue:styleValue);
     } else {
       Logger.log(level:.error, message: "Unexpected property \(prop) for layer: raster")
+    }
+  }
+}
+
+func rasterParticleLayer(layer: inout RasterParticleLayer, reactStyle:Dictionary<String, Any>, oldReactStyle:Dictionary<String, Any>?, applyUpdater: @escaping  ((inout RasterParticleLayer)->Void)->Void, isValid: @escaping () -> Bool)
+{
+  guard self._hasReactStyle(reactStyle) else {
+    Logger.log(level:.error, message: "Invalid style: \(reactStyle)")
+    return
+  }
+
+  let styleProps = reactStyle.keys
+  for prop in styleProps {
+    if (prop == "__MAPBOX_STYLESHEET__") {
+      continue;
+    }
+
+    let styleValue = RNMBXStyleValue.make(reactStyle[prop])
+
+    if (prop == "visibility") {
+      self.setRasterParticleStyleLayerVisibility(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleArrayBand") {
+      self.setRasterParticleArrayBand(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleCount") {
+      self.setRasterParticleCount(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleColor") {
+      self.setRasterParticleColor(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleMaxSpeed") {
+      self.setRasterParticleMaxSpeed(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleSpeedFactor") {
+      self.setRasterParticleSpeedFactor(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleSpeedFactorTransition") {
+      self.setRasterParticleSpeedFactorTransition(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleFadeOpacityFactor") {
+      self.setRasterParticleFadeOpacityFactor(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleFadeOpacityFactorTransition") {
+      self.setRasterParticleFadeOpacityFactorTransition(&layer, styleValue:styleValue);
+    } else if (prop == "rasterParticleResetRateFactor") {
+      self.setRasterParticleResetRateFactor(&layer, styleValue:styleValue);
+    } else {
+      Logger.log(level:.error, message: "Unexpected property \(prop) for layer: raster-particle")
     }
   }
 }
@@ -2121,6 +2180,15 @@ func setFillExtrusionStyleLayerVisibility(_ layer: inout FillExtrusionLayer, sty
     layer.visibility = styleValue.isVisible();
 }
 
+func setFillExtrusionEdgeRadius(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.fillExtrusionEdgeRadius = styleValue.mglStyleValueNumber();
+        
+      
+}
+
 func setFillExtrusionOpacity(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
 {
       
@@ -2216,6 +2284,34 @@ func setFillExtrusionVerticalGradient(_ layer: inout FillExtrusionLayer, styleVa
           layer.fillExtrusionVerticalGradient = styleValue.mglStyleValueBoolean();
         
       
+}
+
+func setFillExtrusionAmbientOcclusionIntensity(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.fillExtrusionAmbientOcclusionIntensity = styleValue.mglStyleValueNumber();
+        
+      
+}
+
+func setFillExtrusionAmbientOcclusionIntensityTransition(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
+{
+    layer.fillExtrusionAmbientOcclusionIntensityTransition = styleValue.getTransition();
+}
+
+func setFillExtrusionAmbientOcclusionRadius(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.fillExtrusionAmbientOcclusionRadius = styleValue.mglStyleValueNumber();
+        
+      
+}
+
+func setFillExtrusionAmbientOcclusionRadiusTransition(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
+{
+    layer.fillExtrusionAmbientOcclusionRadiusTransition = styleValue.getTransition();
 }
 
 func setFillExtrusionRoundedRoof(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
@@ -2402,6 +2498,24 @@ func setFillExtrusionCutoffFadeRange(_ layer: inout FillExtrusionLayer, styleVal
       #endif
 }
 
+func setFillExtrusionEmissiveStrength(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
+{
+      #if RNMBX_11
+      
+        
+          layer.fillExtrusionEmissiveStrength = styleValue.mglStyleValueNumber();
+        
+      
+      #endif
+}
+
+func setFillExtrusionEmissiveStrengthTransition(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
+{
+      #if RNMBX_11
+    layer.fillExtrusionEmissiveStrengthTransition = styleValue.getTransition();
+      #endif
+}
+
 
 
 func setRasterStyleLayerVisibility(_ layer: inout RasterLayer, styleValue: RNMBXStyleValue)
@@ -2556,6 +2670,104 @@ func setRasterColorRangeTransition(_ layer: inout RasterLayer, styleValue: RNMBX
       #if RNMBX_11
     layer.rasterColorRangeTransition = styleValue.getTransition();
       #endif
+}
+
+func setRasterEmissiveStrength(_ layer: inout RasterLayer, styleValue: RNMBXStyleValue)
+{
+      #if RNMBX_11
+      
+        
+          layer.rasterEmissiveStrength = styleValue.mglStyleValueNumber();
+        
+      
+      #endif
+}
+
+func setRasterEmissiveStrengthTransition(_ layer: inout RasterLayer, styleValue: RNMBXStyleValue)
+{
+      #if RNMBX_11
+    layer.rasterEmissiveStrengthTransition = styleValue.getTransition();
+      #endif
+}
+
+
+
+func setRasterParticleStyleLayerVisibility(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+    layer.visibility = styleValue.isVisible();
+}
+
+func setRasterParticleArrayBand(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.rasterParticleArrayBand = styleValue.mglStyleValueString();
+        
+      
+}
+
+func setRasterParticleCount(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.rasterParticleCount = styleValue.mglStyleValueNumber();
+        
+      
+}
+
+func setRasterParticleColor(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.rasterParticleColor = styleValue.mglStyleValueColor();
+        
+      
+}
+
+func setRasterParticleMaxSpeed(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.rasterParticleMaxSpeed = styleValue.mglStyleValueNumber();
+        
+      
+}
+
+func setRasterParticleSpeedFactor(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.rasterParticleSpeedFactor = styleValue.mglStyleValueNumber();
+        
+      
+}
+
+func setRasterParticleSpeedFactorTransition(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+    layer.rasterParticleSpeedFactorTransition = styleValue.getTransition();
+}
+
+func setRasterParticleFadeOpacityFactor(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.rasterParticleFadeOpacityFactor = styleValue.mglStyleValueNumber();
+        
+      
+}
+
+func setRasterParticleFadeOpacityFactorTransition(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+    layer.rasterParticleFadeOpacityFactorTransition = styleValue.getTransition();
+}
+
+func setRasterParticleResetRateFactor(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.rasterParticleResetRateFactor = styleValue.mglStyleValueNumber();
+        
+      
 }
 
 

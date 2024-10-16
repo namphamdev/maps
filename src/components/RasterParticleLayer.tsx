@@ -3,7 +3,10 @@
 import React from 'react';
 import { NativeModules } from 'react-native';
 
-import { FilterExpression, RasterParticleLayerStyleProps } from '../utils/MapboxStyles';
+import {
+  FilterExpression,
+  RasterParticleLayerStyleProps,
+} from '../utils/MapboxStyles';
 import { StyleValue } from '../utils/StyleValue';
 import RNMBXRasterParticleLayerNativeComponent from '../specs/RNMBXRasterParticleLayerNativeComponent';
 
@@ -99,7 +102,10 @@ class RasterParticleLayer extends AbstractLayer<Props, NativeTypeProps> {
     };
     return (
       // @ts-expect-error just codegen stuff
-      <RNMBXRasterParticleLayerNativeComponent ref={this.setNativeLayer} {...props} />
+      <RNMBXRasterParticleLayerNativeComponent
+        ref={this.setNativeLayer}
+        {...props}
+      />
     );
   }
 }

@@ -1,7 +1,7 @@
 import ejs from 'ejs';
 import path from 'path';
 import fs from 'fs';
-import styleSpecJSON from '../../style-spec/v8.json' assert { type: 'json' };
+import styleSpecJSON from '../../style-spec/v8.json' with { type: 'json' };
 import * as url from 'url';
 
 import prettier from 'prettier';
@@ -80,7 +80,6 @@ const JS_OUTPUT_PATH = path.join(__dirname, ...OUTPUT_PREFIX, 'src', 'utils');
  */
 function getPropertiesFor(kind, only) {
   const attributes = styleSpecJSON[kind];
-
   const props = getSupportedProperties(attributes, only).map((attrName) => {
     return Object.assign({}, buildProperties(attributes, attrName, null, kind), {
       allowedFunctionTypes: [],
@@ -101,7 +100,6 @@ function removeTransitionsOnV10Before1070(props) {
 function getPropertiesForLayer(layerName, only) {
   const paintAttributes = styleSpecJSON[`paint_${layerName}`];
   const layoutAttributes = styleSpecJSON[`layout_${layerName}`];
-
   const paintProps = getSupportedProperties(paintAttributes, only).map(
     (attrName) => {
       const prop = buildProperties(paintAttributes, attrName, 'paint', layerName);
@@ -150,7 +148,6 @@ function getSupportedLayers(layerNames) {
   for (const layerName of layerNames) {
     const layer = layerMap[layerName];
     const support = getAttributeSupport(layer['sdk-support']);
-
     if (layerName === 'model') {
       support.basic.v10.android = true;
       support.basic.v10.ios = true;
