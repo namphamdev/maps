@@ -17,6 +17,10 @@ internal fun RasterLayer.rasterColor(rasterColor: Int) {
     this.rasterColor(Expression.color(rasterColor))
 }
 
+internal fun RasterParticleLayer.rasterParticleCount(rasterParticleCount: Int) {
+    this.rasterParticleCount(Expression.color(rasterParticleCount))
+}
+
 internal fun RasterParticleLayer.rasterParticleColor(rasterParticleColor: Int) {
     this.rasterParticleColor(Expression.color(rasterParticleColor))
 }
