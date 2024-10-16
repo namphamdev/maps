@@ -76,4 +76,9 @@ public class FeatureClickEvent extends AbstractEvent {
         return new FeatureClickEvent(view, EventKeys.RASTER_SOURCE_LAYER_CLICK.getValue(),
                 EventTypes.RASTER_SOURCE_LAYER_CLICK, event.getFeatures(), event.getLatLng(), event.getScreenPoint());
     }
+
+    public static FeatureClickEvent makeRasterArraySourceEvent(View view, RNMBXSource.OnPressEvent event) {
+        return new FeatureClickEvent(view, EventKeys.RASTER_ARRAY_SOURCE_LAYER_CLICK.getValue(),
+                EventTypes.RASTER_ARRAY_SOURCE_LAYER_CLICK, event.getFeatures(), event.getLatLng(), event.getScreenPoint());
+    }
 }

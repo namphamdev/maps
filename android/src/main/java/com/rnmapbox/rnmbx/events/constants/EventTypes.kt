@@ -39,6 +39,7 @@ object EventTypes {
     const val SHAPE_SOURCE_LAYER_CLICK = "shapesourcelayerpress"
     const val VECTOR_SOURCE_LAYER_CLICK = "vectorsourcelayerpress"
     const val RASTER_SOURCE_LAYER_CLICK = "rastersourcelayerpress"
+    const val RASTER_ARRAY_SOURCE_LAYER_CLICK = "rasterarraysourcelayerpress"
 
     // image missing event type
     const val IMAGES_MISSING = "imagesmissing"

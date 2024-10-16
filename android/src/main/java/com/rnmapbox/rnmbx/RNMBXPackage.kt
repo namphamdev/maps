@@ -42,6 +42,7 @@ import com.rnmapbox.rnmbx.components.styles.model.RNMBXModelsManager
 import com.rnmapbox.rnmbx.components.styles.sources.RNMBXImageSourceManager
 import com.rnmapbox.rnmbx.components.styles.sources.RNMBXRasterDemSourceManager
 import com.rnmapbox.rnmbx.components.styles.sources.RNMBXRasterSourceManager
+import com.rnmapbox.rnmbx.components.styles.sources.RNMBXRasterArraySourceManager
 import com.rnmapbox.rnmbx.components.styles.sources.RNMBXShapeSourceManager
 import com.rnmapbox.rnmbx.components.styles.sources.RNMBXShapeSourceModule
 import com.rnmapbox.rnmbx.components.styles.sources.RNMBXVectorSourceManager
@@ -141,6 +142,7 @@ class RNMBXPackage : TurboReactPackage() {
             ))
         managers.add(RNMBXRasterDemSourceManager(reactApplicationContext))
         managers.add(RNMBXRasterSourceManager(reactApplicationContext))
+        managers.add(RNMBXRasterArraySourceManager(reactApplicationContext))
         managers.add(RNMBXImageSourceManager())
 
         // images
