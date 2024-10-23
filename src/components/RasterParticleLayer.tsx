@@ -101,8 +101,8 @@ class RasterParticleLayer extends AbstractLayer<Props, NativeTypeProps> {
       sourceLayerID: this.props.sourceLayerID,
     };
     return (
-      // @ts-expect-error just codegen stuff
       <RNMBXRasterParticleLayerNativeComponent
+        // @ts-expect-error just codegen stuff
         ref={this.setNativeLayer}
         {...props}
       />

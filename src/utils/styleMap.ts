@@ -46,6 +46,7 @@ const styleMap = {
   lineMiterLimit: StyleTypes.Constant,
   lineRoundLimit: StyleTypes.Constant,
   lineSortKey: StyleTypes.Constant,
+  lineZOffset: StyleTypes.Constant,
   lineOpacity: StyleTypes.Constant,
   lineOpacityTransition: StyleTypes.Transition,
   lineColor: StyleTypes.Color,

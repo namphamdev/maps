@@ -1842,13 +1842,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.5.0",
-          "android": "11.5.0",
-          "ios": "11.5.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.5.0",
-          "android": "11.5.0",
-          "ios": "11.5.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {

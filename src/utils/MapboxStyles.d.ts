@@ -544,6 +544,10 @@ export interface LineLayerStyleProps {
    */
   lineSortKey?: Value<number, ['zoom', 'feature']>;
   /**
+   * Vertical offset from ground, in meters. Defaults to 0. Not supported for globe projection at the moment.
+   */
+  lineZOffset?: Value<number, ['zoom', 'feature', 'line-progress']>;
+  /**
    * Whether this layer is displayed.
    */
   visibility?: Value<Enum<VisibilityEnum, VisibilityEnumValues>>;

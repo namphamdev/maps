@@ -117,6 +117,8 @@ object RNMBXStyleFactory {
                 setLineRoundLimit(layer, styleValue)
               "lineSortKey" ->
                 setLineSortKey(layer, styleValue)
+              "lineZOffset" ->
+                setLineZOffset(layer, styleValue)
               "visibility" ->
                 setVisibility(layer, styleValue)
               "lineOpacity" ->
@@ -1244,6 +1246,24 @@ object RNMBXStyleFactory {
             layer.lineSortKey(value)
           } else {
             Logger.e("RNMBXLine", "value for lineSortKey is null")
+          }
+      }
+    }
+
+    fun setLineZOffset(layer: LineLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.lineZOffset(expression)
+        } else {
+          Logger.e("RNMBXLine", "Expression for lineZOffset is null")
+        }
+      } else {
+          val value = styleValue.getDouble(VALUE_KEY)
+          if (value != null) {
+            layer.lineZOffset(value)
+          } else {
+            Logger.e("RNMBXLine", "value for lineZOffset is null")
           }
       }
     }
@@ -3963,7 +3983,7 @@ object RNMBXStyleFactory {
           Logger.e("RNMBXRasterParticle", "Expression for rasterParticleCount is null")
         }
       } else {
-          val value = styleValue.getDouble(VALUE_KEY).toLong()
+          val value = styleValue.getDouble(VALUE_KEY)
           if (value != null) {
             layer.rasterParticleCount(value)
           } else {

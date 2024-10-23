@@ -96,6 +96,8 @@ func lineLayer(layer: inout LineLayer, reactStyle:Dictionary<String, Any>, oldRe
       self.setLineRoundLimit(&layer, styleValue:styleValue);
     } else if (prop == "lineSortKey") {
       self.setLineSortKey(&layer, styleValue:styleValue);
+    } else if (prop == "lineZOffset") {
+      self.setLineZOffset(&layer, styleValue:styleValue);
     } else if (prop == "visibility") {
       self.setLineStyleLayerVisibility(&layer, styleValue:styleValue);
     } else if (prop == "lineOpacity") {
@@ -1136,6 +1138,15 @@ func setLineSortKey(_ layer: inout LineLayer, styleValue: RNMBXStyleValue)
       
         
           layer.lineSortKey = styleValue.mglStyleValueNumber();
+        
+      
+}
+
+func setLineZOffset(_ layer: inout LineLayer, styleValue: RNMBXStyleValue)
+{
+      
+        
+          layer.lineZOffset = styleValue.mglStyleValueNumber();
         
       
 }
