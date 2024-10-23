@@ -20,4 +20,5 @@ public interface RNMBXRasterArraySourceManagerInterface<T extends View> {
   void setMaxZoomLevel(T view, Dynamic value);
   void setTileSize(T view, Dynamic value);
   void setAttribution(T view, Dynamic value);
+  void setTileUrlTemplates(T view, Dynamic value);
 }

@@ -2,6 +2,7 @@ package com.rnmapbox.rnmbx.components.styles.sources
 
 import android.content.Context
 import com.mapbox.maps.extension.style.sources.generated.RasterArraySource
+import com.mapbox.maps.extension.style.sources.generated.RasterSource
 
 class RNMBXRasterArraySource(context: Context?) : RNMBXTileSource<RasterArraySource?>(context) {
     private var mTileSize: Int? = null
@@ -9,10 +10,10 @@ class RNMBXRasterArraySource(context: Context?) : RNMBXTileSource<RasterArraySou
         val id = iD!!
         val configurationUrl = uRL
         val tileSize = if (mTileSize == null) DEFAULT_TILE_SIZE else mTileSize!!
-        return if (configurationUrl != null) {
-            RasterArraySource.Builder(id).url(configurationUrl).tileSize(tileSize.toLong()).build()
-        } else RasterArraySource.Builder(id).tileSet(buildTileset())
-            .tileSize(tileSize.toLong()).build()
+		return if (configurationUrl != null) {
+			RasterArraySource.Builder(id).url(configurationUrl).tileSize(tileSize.toLong()).build()
+		} else RasterArraySource.Builder(id).tileSet(buildTileset())
+			.tileSize(tileSize.toLong()).build()
     }
 
     fun setTileSize(tileSize: Int) {

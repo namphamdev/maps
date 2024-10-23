@@ -30,6 +30,12 @@ type Props = BaseProps & {
   url?: string;
 
   /**
+   * An array of tile URL templates. If multiple endpoints are specified, clients may use any combination of endpoints.
+   * Example: https://example.com/raster-tiles/{z}/{x}/{y}.png
+   */
+  tileUrlTemplates?: string[];
+
+  /**
    * An unsigned integer that specifies the minimum zoom level at which to display tiles from the source.
    * The value should be between 0 and 22, inclusive, and less than
    * maxZoomLevel, if specified. The default value for this option is 0.
@@ -81,10 +87,12 @@ class RasterArraySource extends AbstractSource<Props, NativeProps> {
 
   render() {
     let { url } = this.props;
+    let { tileUrlTemplates } = this.props;
 
     // Swapping url for tileUrlTemplates to provide backward compatibility
     // when RasterSource supported only tile url as url prop
     if (isTileTemplateUrl(url)) {
+      tileUrlTemplates = [url];
       url = undefined;
     }
 
@@ -93,6 +101,7 @@ class RasterArraySource extends AbstractSource<Props, NativeProps> {
       id: this.props.id,
       existing: this.props.existing,
       url,
+      tileUrlTemplates,
       minZoomLevel: this.props.minZoomLevel,
       maxZoomLevel: this.props.maxZoomLevel,
       tileSize: this.props.tileSize,
