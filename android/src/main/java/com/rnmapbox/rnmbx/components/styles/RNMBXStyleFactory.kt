@@ -679,10 +679,6 @@ object RNMBXStyleFactory {
                 setRasterParticleFadeOpacityFactorTransition(layer, styleValue)
               "rasterParticleResetRateFactor" ->
                 setRasterParticleResetRateFactor(layer, styleValue)
-              "rasterParticleElevation" ->
-                setRasterParticleElevation(layer, styleValue)
-                "rasterParticleElevationTransition" ->
-                setRasterParticleElevationTransition(layer, styleValue)
           }
         } catch (e: MapboxStyleException) {
           Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")
@@ -835,8 +831,6 @@ object RNMBXStyleFactory {
                 setBackgroundEmissiveStrength(layer, styleValue)
                 "backgroundEmissiveStrengthTransition" ->
                 setBackgroundEmissiveStrengthTransition(layer, styleValue)
-              "backgroundPitchAlignment" ->
-                setBackgroundPitchAlignment(layer, styleValue)
           }
         } catch (e: MapboxStyleException) {
           Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")
@@ -4229,32 +4223,6 @@ object RNMBXStyleFactory {
       }
     }
 
-    fun setRasterParticleElevation(layer: RasterParticleLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.rasterParticleElevation(expression)
-        } else {
-          Logger.e("RNMBXRasterParticle", "Expression for rasterParticleElevation is null")
-        }
-      } else {
-          val value = styleValue.getDouble(VALUE_KEY)
-          if (value != null) {
-            layer.rasterParticleElevation(value)
-          } else {
-            Logger.e("RNMBXRasterParticle", "value for rasterParticleElevation is null")
-          }
-      }
-    }
-
-
-    fun setRasterParticleElevationTransition(layer: RasterParticleLayer, styleValue: RNMBXStyleValue) {
-      val transition = styleValue.transition
-      if (transition != null) {
-        layer.rasterParticleElevationTransition(transition);
-      }
-    }
-
     fun setVisibility(layer: HillshadeLayer, styleValue: RNMBXStyleValue ) {
         layer.visibility(Visibility.valueOf(styleValue.getEnumName()));
     }
@@ -4849,19 +4817,6 @@ object RNMBXStyleFactory {
       val transition = styleValue.transition
       if (transition != null) {
         layer.backgroundEmissiveStrengthTransition(transition);
-      }
-    }
-
-    fun setBackgroundPitchAlignment(layer: BackgroundLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.backgroundPitchAlignment(expression)
-        } else {
-          Logger.e("RNMBXBackground", "Expression for backgroundPitchAlignment is null")
-        }
-      } else {
-          layer.backgroundPitchAlignment(BackgroundPitchAlignment.valueOf(styleValue.getEnumName()))
       }
     }
 

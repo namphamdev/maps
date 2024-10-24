@@ -676,10 +676,6 @@ func rasterParticleLayer(layer: inout RasterParticleLayer, reactStyle:Dictionary
       self.setRasterParticleFadeOpacityFactorTransition(&layer, styleValue:styleValue);
     } else if (prop == "rasterParticleResetRateFactor") {
       self.setRasterParticleResetRateFactor(&layer, styleValue:styleValue);
-    } else if (prop == "rasterParticleElevation") {
-      self.setRasterParticleElevation(&layer, styleValue:styleValue);
-    } else if (prop == "rasterParticleElevationTransition") {
-      self.setRasterParticleElevationTransition(&layer, styleValue:styleValue);
     } else {
       Logger.log(level:.error, message: "Unexpected property \(prop) for layer: raster-particle")
     }
@@ -841,8 +837,6 @@ func backgroundLayer(layer: inout BackgroundLayer, reactStyle:Dictionary<String,
       self.setBackgroundEmissiveStrength(&layer, styleValue:styleValue);
     } else if (prop == "backgroundEmissiveStrengthTransition") {
       self.setBackgroundEmissiveStrengthTransition(&layer, styleValue:styleValue);
-    } else if (prop == "backgroundPitchAlignment") {
-      self.setBackgroundPitchAlignment(&layer, styleValue:styleValue);
     } else {
       Logger.log(level:.error, message: "Unexpected property \(prop) for layer: background")
     }
@@ -2809,24 +2803,6 @@ func setRasterParticleResetRateFactor(_ layer: inout RasterParticleLayer, styleV
       
 }
 
-func setRasterParticleElevation(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
-{
-      #if RNMBX_11
-      
-        
-          layer.rasterParticleElevation = styleValue.mglStyleValueNumber();
-        
-      
-      #endif
-}
-
-func setRasterParticleElevationTransition(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
-{
-      #if RNMBX_11
-    layer.rasterParticleElevationTransition = styleValue.getTransition();
-      #endif
-}
-
 
 
 func setHillshadeStyleLayerVisibility(_ layer: inout HillshadeLayer, styleValue: RNMBXStyleValue)
@@ -3158,17 +3134,6 @@ func setBackgroundEmissiveStrength(_ layer: inout BackgroundLayer, styleValue: R
 func setBackgroundEmissiveStrengthTransition(_ layer: inout BackgroundLayer, styleValue: RNMBXStyleValue)
 {
     layer.backgroundEmissiveStrengthTransition = styleValue.getTransition();
-}
-
-func setBackgroundPitchAlignment(_ layer: inout BackgroundLayer, styleValue: RNMBXStyleValue)
-{
-      #if RNMBX_11
-      
-        
-          layer.backgroundPitchAlignment = styleValue.mglStyleValueEnum(); 
-        
-      
-      #endif
 }
 
 

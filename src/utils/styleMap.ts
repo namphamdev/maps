@@ -257,8 +257,6 @@ const styleMap = {
   rasterParticleFadeOpacityFactor: StyleTypes.Constant,
   rasterParticleFadeOpacityFactorTransition: StyleTypes.Transition,
   rasterParticleResetRateFactor: StyleTypes.Constant,
-  rasterParticleElevation: StyleTypes.Constant,
-  rasterParticleElevationTransition: StyleTypes.Transition,
 
   hillshadeIlluminationDirection: StyleTypes.Constant,
   hillshadeIlluminationAnchor: StyleTypes.Enum,
@@ -304,7 +302,6 @@ const styleMap = {
   backgroundOpacityTransition: StyleTypes.Transition,
   backgroundEmissiveStrength: StyleTypes.Constant,
   backgroundEmissiveStrengthTransition: StyleTypes.Transition,
-  backgroundPitchAlignment: StyleTypes.Enum,
 
   skyType: StyleTypes.Enum,
   skyAtmosphereSun: StyleTypes.Constant,

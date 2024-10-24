@@ -425,13 +425,6 @@ enum ModelTypeEnum {
   LocationIndicator = 'location-indicator',
 }
 type ModelTypeEnumValues = 'common-3d' | 'location-indicator';
-enum BackgroundPitchAlignmentEnum {
-  /** The background is aligned to the plane of the map. */
-  Map = 'map',
-  /** The background is aligned to the plane of the viewport, covering the whole screen. */
-  Viewport = 'viewport',
-}
-type BackgroundPitchAlignmentEnumValues = 'map' | 'viewport';
 enum SkyTypeEnum {
   /** Renders the sky with a gradient that can be configured with `sky-gradient-radius` and `sky-gradient`. */
   Gradient = 'gradient',
@@ -1801,15 +1794,6 @@ export interface RasterParticleLayerStyleProps {
    * Defines a coefficient for a time period at which particles will restart at a random position, to avoid degeneration (empty areas without particles).
    */
   rasterParticleResetRateFactor?: number;
-  /**
-   * Specifies an uniform elevation from the ground, in meters.
-   */
-  rasterParticleElevation?: Value<number, ['zoom']>;
-
-  /**
-   * The transition affecting any changes to this layer’s rasterParticleElevation property.
-   */
-  rasterParticleElevationTransition?: Transition;
 }
 export interface HillshadeLayerStyleProps {
   /**
@@ -2035,13 +2019,6 @@ export interface BackgroundLayerStyleProps {
    * The transition affecting any changes to this layer’s backgroundEmissiveStrength property.
    */
   backgroundEmissiveStrengthTransition?: Transition;
-  /**
-   * Orientation of background layer.
-   */
-  backgroundPitchAlignment?: Value<
-    Enum<BackgroundPitchAlignmentEnum, BackgroundPitchAlignmentEnumValues>,
-    []
-  >;
 }
 export interface SkyLayerStyleProps {
   /**
