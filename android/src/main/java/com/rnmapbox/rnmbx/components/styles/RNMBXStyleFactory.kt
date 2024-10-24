@@ -199,6 +199,8 @@ object RNMBXStyleFactory {
                 setSymbolSortKey(layer, styleValue)
               "symbolZOrder" ->
                 setSymbolZOrder(layer, styleValue)
+              "symbolZElevate" ->
+                setSymbolZElevate(layer, styleValue)
               "iconAllowOverlap" ->
                 setIconAllowOverlap(layer, styleValue)
               "iconIgnorePlacement" ->
@@ -333,8 +335,12 @@ object RNMBXStyleFactory {
                 setTextTranslateTransition(layer, styleValue)
               "textTranslateAnchor" ->
                 setTextTranslateAnchor(layer, styleValue)
-              "symbolZElevate" ->
-                setSymbolZElevate(layer, styleValue)
+              "symbolZOffset" ->
+                setSymbolZOffset(layer, styleValue)
+                "symbolZOffsetTransition" ->
+                setSymbolZOffsetTransition(layer, styleValue)
+              "symbolElevationReference" ->
+                setSymbolElevationReference(layer, styleValue)
               "iconEmissiveStrength" ->
                 setIconEmissiveStrength(layer, styleValue)
                 "iconEmissiveStrengthTransition" ->
@@ -519,12 +525,6 @@ object RNMBXStyleFactory {
                 setFillExtrusionAmbientOcclusionRadius(layer, styleValue)
                 "fillExtrusionAmbientOcclusionRadiusTransition" ->
                 setFillExtrusionAmbientOcclusionRadiusTransition(layer, styleValue)
-              "fillExtrusionRoundedRoof" ->
-                setFillExtrusionRoundedRoof(layer, styleValue)
-              "fillExtrusionAmbientOcclusionWallRadius" ->
-                setFillExtrusionAmbientOcclusionWallRadius(layer, styleValue)
-                "fillExtrusionAmbientOcclusionWallRadiusTransition" ->
-                setFillExtrusionAmbientOcclusionWallRadiusTransition(layer, styleValue)
               "fillExtrusionAmbientOcclusionGroundRadius" ->
                 setFillExtrusionAmbientOcclusionGroundRadius(layer, styleValue)
                 "fillExtrusionAmbientOcclusionGroundRadiusTransition" ->
@@ -557,12 +557,24 @@ object RNMBXStyleFactory {
                 setFillExtrusionVerticalScale(layer, styleValue)
                 "fillExtrusionVerticalScaleTransition" ->
                 setFillExtrusionVerticalScaleTransition(layer, styleValue)
+              "fillExtrusionRoundedRoof" ->
+                setFillExtrusionRoundedRoof(layer, styleValue)
               "fillExtrusionCutoffFadeRange" ->
                 setFillExtrusionCutoffFadeRange(layer, styleValue)
               "fillExtrusionEmissiveStrength" ->
                 setFillExtrusionEmissiveStrength(layer, styleValue)
                 "fillExtrusionEmissiveStrengthTransition" ->
                 setFillExtrusionEmissiveStrengthTransition(layer, styleValue)
+              "fillExtrusionLineWidth" ->
+                setFillExtrusionLineWidth(layer, styleValue)
+                "fillExtrusionLineWidthTransition" ->
+                setFillExtrusionLineWidthTransition(layer, styleValue)
+              "fillExtrusionCastShadows" ->
+                setFillExtrusionCastShadows(layer, styleValue)
+              "fillExtrusionAmbientOcclusionWallRadius" ->
+                setFillExtrusionAmbientOcclusionWallRadius(layer, styleValue)
+                "fillExtrusionAmbientOcclusionWallRadiusTransition" ->
+                setFillExtrusionAmbientOcclusionWallRadiusTransition(layer, styleValue)
           }
         } catch (e: MapboxStyleException) {
           Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")
@@ -587,6 +599,16 @@ object RNMBXStyleFactory {
                 setRasterOpacity(layer, styleValue)
                 "rasterOpacityTransition" ->
                 setRasterOpacityTransition(layer, styleValue)
+              "rasterColor" ->
+                setRasterColor(layer, styleValue)
+              "rasterColorMix" ->
+                setRasterColorMix(layer, styleValue)
+                "rasterColorMixTransition" ->
+                setRasterColorMixTransition(layer, styleValue)
+              "rasterColorRange" ->
+                setRasterColorRange(layer, styleValue)
+                "rasterColorRangeTransition" ->
+                setRasterColorRangeTransition(layer, styleValue)
               "rasterHueRotate" ->
                 setRasterHueRotate(layer, styleValue)
                 "rasterHueRotateTransition" ->
@@ -611,20 +633,16 @@ object RNMBXStyleFactory {
                 setRasterResampling(layer, styleValue)
               "rasterFadeDuration" ->
                 setRasterFadeDuration(layer, styleValue)
-              "rasterColor" ->
-                setRasterColor(layer, styleValue)
-              "rasterColorMix" ->
-                setRasterColorMix(layer, styleValue)
-                "rasterColorMixTransition" ->
-                setRasterColorMixTransition(layer, styleValue)
-              "rasterColorRange" ->
-                setRasterColorRange(layer, styleValue)
-                "rasterColorRangeTransition" ->
-                setRasterColorRangeTransition(layer, styleValue)
               "rasterEmissiveStrength" ->
                 setRasterEmissiveStrength(layer, styleValue)
                 "rasterEmissiveStrengthTransition" ->
                 setRasterEmissiveStrengthTransition(layer, styleValue)
+              "rasterArrayBand" ->
+                setRasterArrayBand(layer, styleValue)
+              "rasterElevation" ->
+                setRasterElevation(layer, styleValue)
+                "rasterElevationTransition" ->
+                setRasterElevationTransition(layer, styleValue)
           }
         } catch (e: MapboxStyleException) {
           Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")
@@ -663,6 +681,10 @@ object RNMBXStyleFactory {
                 setRasterParticleFadeOpacityFactorTransition(layer, styleValue)
               "rasterParticleResetRateFactor" ->
                 setRasterParticleResetRateFactor(layer, styleValue)
+              "rasterParticleElevation" ->
+                setRasterParticleElevation(layer, styleValue)
+                "rasterParticleElevationTransition" ->
+                setRasterParticleElevationTransition(layer, styleValue)
           }
         } catch (e: MapboxStyleException) {
           Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")
@@ -721,10 +743,6 @@ object RNMBXStyleFactory {
           val styleValue = style.getStyleValueForKey(styleKey)
 
           when (styleKey) {
-              "visibility" ->
-                setVisibility(layer, styleValue)
-              "modelId" ->
-                setModelId(layer, styleValue)
               "modelOpacity" ->
                 setModelOpacity(layer, styleValue)
                 "modelOpacityTransition" ->
@@ -773,6 +791,10 @@ object RNMBXStyleFactory {
                 setModelHeightBasedEmissiveStrengthMultiplierTransition(layer, styleValue)
               "modelCutoffFadeRange" ->
                 setModelCutoffFadeRange(layer, styleValue)
+              "visibility" ->
+                setVisibility(layer, styleValue)
+              "modelId" ->
+                setModelId(layer, styleValue)
           }
         } catch (e: MapboxStyleException) {
           Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")
@@ -793,6 +815,8 @@ object RNMBXStyleFactory {
           when (styleKey) {
               "visibility" ->
                 setVisibility(layer, styleValue)
+              "backgroundPitchAlignment" ->
+                setBackgroundPitchAlignment(layer, styleValue)
               "backgroundColor" ->
                 setBackgroundColor(layer, styleValue)
                 "backgroundColorTransition" ->
@@ -1646,6 +1670,24 @@ object RNMBXStyleFactory {
         }
       } else {
           layer.symbolZOrder(SymbolZOrder.valueOf(styleValue.getEnumName()))
+      }
+    }
+
+    fun setSymbolZElevate(layer: SymbolLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.symbolZElevate(expression)
+        } else {
+          Logger.e("RNMBXSymbol", "Expression for symbolZElevate is null")
+        }
+      } else {
+          val value = styleValue.getBoolean(VALUE_KEY)
+          if (value != null) {
+            layer.symbolZElevate(value)
+          } else {
+            Logger.e("RNMBXSymbol", "value for symbolZElevate is null")
+          }
       }
     }
 
@@ -2603,21 +2645,42 @@ object RNMBXStyleFactory {
       }
     }
 
-    fun setSymbolZElevate(layer: SymbolLayer, styleValue: RNMBXStyleValue ) {
+    fun setSymbolZOffset(layer: SymbolLayer, styleValue: RNMBXStyleValue ) {
       if (styleValue.isExpression()) {
         val expression = styleValue.getExpression()
         if (expression != null) {
-          layer.symbolZElevate(expression)
+          layer.symbolZOffset(expression)
         } else {
-          Logger.e("RNMBXSymbol", "Expression for symbolZElevate is null")
+          Logger.e("RNMBXSymbol", "Expression for symbolZOffset is null")
         }
       } else {
-          val value = styleValue.getBoolean(VALUE_KEY)
+          val value = styleValue.getDouble(VALUE_KEY)
           if (value != null) {
-            layer.symbolZElevate(value)
+            layer.symbolZOffset(value)
           } else {
-            Logger.e("RNMBXSymbol", "value for symbolZElevate is null")
+            Logger.e("RNMBXSymbol", "value for symbolZOffset is null")
           }
+      }
+    }
+
+
+    fun setSymbolZOffsetTransition(layer: SymbolLayer, styleValue: RNMBXStyleValue) {
+      val transition = styleValue.transition
+      if (transition != null) {
+        layer.symbolZOffsetTransition(transition);
+      }
+    }
+
+    fun setSymbolElevationReference(layer: SymbolLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.symbolElevationReference(expression)
+        } else {
+          Logger.e("RNMBXSymbol", "Expression for symbolElevationReference is null")
+        }
+      } else {
+          layer.symbolElevationReference(SymbolElevationReference.valueOf(styleValue.getEnumName()))
       }
     }
 
@@ -3369,50 +3432,6 @@ object RNMBXStyleFactory {
       }
     }
 
-    fun setFillExtrusionRoundedRoof(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.fillExtrusionRoundedRoof(expression)
-        } else {
-          Logger.e("RNMBXFillExtrusion", "Expression for fillExtrusionRoundedRoof is null")
-        }
-      } else {
-          val value = styleValue.getBoolean(VALUE_KEY)
-          if (value != null) {
-            layer.fillExtrusionRoundedRoof(value)
-          } else {
-            Logger.e("RNMBXFillExtrusion", "value for fillExtrusionRoundedRoof is null")
-          }
-      }
-    }
-
-    fun setFillExtrusionAmbientOcclusionWallRadius(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.fillExtrusionAmbientOcclusionWallRadius(expression)
-        } else {
-          Logger.e("RNMBXFillExtrusion", "Expression for fillExtrusionAmbientOcclusionWallRadius is null")
-        }
-      } else {
-          val value = styleValue.getDouble(VALUE_KEY)
-          if (value != null) {
-            layer.fillExtrusionAmbientOcclusionWallRadius(value)
-          } else {
-            Logger.e("RNMBXFillExtrusion", "value for fillExtrusionAmbientOcclusionWallRadius is null")
-          }
-      }
-    }
-
-
-    fun setFillExtrusionAmbientOcclusionWallRadiusTransition(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue) {
-      val transition = styleValue.transition
-      if (transition != null) {
-        layer.fillExtrusionAmbientOcclusionWallRadiusTransition(transition);
-      }
-    }
-
     fun setFillExtrusionAmbientOcclusionGroundRadius(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
       if (styleValue.isExpression()) {
         val expression = styleValue.getExpression()
@@ -3621,6 +3640,24 @@ object RNMBXStyleFactory {
       }
     }
 
+    fun setFillExtrusionRoundedRoof(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.fillExtrusionRoundedRoof(expression)
+        } else {
+          Logger.e("RNMBXFillExtrusion", "Expression for fillExtrusionRoundedRoof is null")
+        }
+      } else {
+          val value = styleValue.getBoolean(VALUE_KEY)
+          if (value != null) {
+            layer.fillExtrusionRoundedRoof(value)
+          } else {
+            Logger.e("RNMBXFillExtrusion", "value for fillExtrusionRoundedRoof is null")
+          }
+      }
+    }
+
     fun setFillExtrusionCutoffFadeRange(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
       if (styleValue.isExpression()) {
         val expression = styleValue.getExpression()
@@ -3665,6 +3702,76 @@ object RNMBXStyleFactory {
       }
     }
 
+    fun setFillExtrusionLineWidth(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.fillExtrusionLineWidth(expression)
+        } else {
+          Logger.e("RNMBXFillExtrusion", "Expression for fillExtrusionLineWidth is null")
+        }
+      } else {
+          val value = styleValue.getDouble(VALUE_KEY)
+          if (value != null) {
+            layer.fillExtrusionLineWidth(value)
+          } else {
+            Logger.e("RNMBXFillExtrusion", "value for fillExtrusionLineWidth is null")
+          }
+      }
+    }
+
+
+    fun setFillExtrusionLineWidthTransition(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue) {
+      val transition = styleValue.transition
+      if (transition != null) {
+        layer.fillExtrusionLineWidthTransition(transition);
+      }
+    }
+
+    fun setFillExtrusionCastShadows(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.fillExtrusionCastShadows(expression)
+        } else {
+          Logger.e("RNMBXFillExtrusion", "Expression for fillExtrusionCastShadows is null")
+        }
+      } else {
+          val value = styleValue.getBoolean(VALUE_KEY)
+          if (value != null) {
+            layer.fillExtrusionCastShadows(value)
+          } else {
+            Logger.e("RNMBXFillExtrusion", "value for fillExtrusionCastShadows is null")
+          }
+      }
+    }
+
+    fun setFillExtrusionAmbientOcclusionWallRadius(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.fillExtrusionAmbientOcclusionWallRadius(expression)
+        } else {
+          Logger.e("RNMBXFillExtrusion", "Expression for fillExtrusionAmbientOcclusionWallRadius is null")
+        }
+      } else {
+          val value = styleValue.getDouble(VALUE_KEY)
+          if (value != null) {
+            layer.fillExtrusionAmbientOcclusionWallRadius(value)
+          } else {
+            Logger.e("RNMBXFillExtrusion", "value for fillExtrusionAmbientOcclusionWallRadius is null")
+          }
+      }
+    }
+
+
+    fun setFillExtrusionAmbientOcclusionWallRadiusTransition(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue) {
+      val transition = styleValue.transition
+      if (transition != null) {
+        layer.fillExtrusionAmbientOcclusionWallRadiusTransition(transition);
+      }
+    }
+
     fun setVisibility(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
         layer.visibility(Visibility.valueOf(styleValue.getEnumName()));
     }
@@ -3692,6 +3799,76 @@ object RNMBXStyleFactory {
       val transition = styleValue.transition
       if (transition != null) {
         layer.rasterOpacityTransition(transition);
+      }
+    }
+
+    fun setRasterColor(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.rasterColor(expression)
+        } else {
+          Logger.e("RNMBXRaster", "Expression for rasterColor is null")
+        }
+      } else {
+          val value = styleValue.getInt(VALUE_KEY)
+          if (value != null) {
+            layer.rasterColor(value)
+          } else {
+            Logger.e("RNMBXRaster", "value for rasterColor is null")
+          }
+      }
+    }
+
+    fun setRasterColorMix(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.rasterColorMix(expression)
+        } else {
+          Logger.e("RNMBXRaster", "Expression for rasterColorMix is null")
+        }
+      } else {
+          val value = styleValue.getFloatArray(VALUE_KEY)
+          if (value != null) {
+            layer.rasterColorMix(value)
+          } else {
+            Logger.e("RNMBXRaster", "value for rasterColorMix is null")
+          }
+      }
+    }
+
+
+    fun setRasterColorMixTransition(layer: RasterLayer, styleValue: RNMBXStyleValue) {
+      val transition = styleValue.transition
+      if (transition != null) {
+        layer.rasterColorMixTransition(transition);
+      }
+    }
+
+    fun setRasterColorRange(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.rasterColorRange(expression)
+        } else {
+          Logger.e("RNMBXRaster", "Expression for rasterColorRange is null")
+        }
+      } else {
+          val value = styleValue.getFloatArray(VALUE_KEY)
+          if (value != null) {
+            layer.rasterColorRange(value)
+          } else {
+            Logger.e("RNMBXRaster", "value for rasterColorRange is null")
+          }
+      }
+    }
+
+
+    fun setRasterColorRangeTransition(layer: RasterLayer, styleValue: RNMBXStyleValue) {
+      val transition = styleValue.transition
+      if (transition != null) {
+        layer.rasterColorRangeTransition(transition);
       }
     }
 
@@ -3856,76 +4033,6 @@ object RNMBXStyleFactory {
       }
     }
 
-    fun setRasterColor(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.rasterColor(expression)
-        } else {
-          Logger.e("RNMBXRaster", "Expression for rasterColor is null")
-        }
-      } else {
-          val value = styleValue.getInt(VALUE_KEY)
-          if (value != null) {
-            layer.rasterColor(value)
-          } else {
-            Logger.e("RNMBXRaster", "value for rasterColor is null")
-          }
-      }
-    }
-
-    fun setRasterColorMix(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.rasterColorMix(expression)
-        } else {
-          Logger.e("RNMBXRaster", "Expression for rasterColorMix is null")
-        }
-      } else {
-          val value = styleValue.getFloatArray(VALUE_KEY)
-          if (value != null) {
-            layer.rasterColorMix(value)
-          } else {
-            Logger.e("RNMBXRaster", "value for rasterColorMix is null")
-          }
-      }
-    }
-
-
-    fun setRasterColorMixTransition(layer: RasterLayer, styleValue: RNMBXStyleValue) {
-      val transition = styleValue.transition
-      if (transition != null) {
-        layer.rasterColorMixTransition(transition);
-      }
-    }
-
-    fun setRasterColorRange(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.rasterColorRange(expression)
-        } else {
-          Logger.e("RNMBXRaster", "Expression for rasterColorRange is null")
-        }
-      } else {
-          val value = styleValue.getFloatArray(VALUE_KEY)
-          if (value != null) {
-            layer.rasterColorRange(value)
-          } else {
-            Logger.e("RNMBXRaster", "value for rasterColorRange is null")
-          }
-      }
-    }
-
-
-    fun setRasterColorRangeTransition(layer: RasterLayer, styleValue: RNMBXStyleValue) {
-      val transition = styleValue.transition
-      if (transition != null) {
-        layer.rasterColorRangeTransition(transition);
-      }
-    }
-
     fun setRasterEmissiveStrength(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
       if (styleValue.isExpression()) {
         val expression = styleValue.getExpression()
@@ -3949,6 +4056,50 @@ object RNMBXStyleFactory {
       val transition = styleValue.transition
       if (transition != null) {
         layer.rasterEmissiveStrengthTransition(transition);
+      }
+    }
+
+    fun setRasterArrayBand(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.rasterArrayBand(expression)
+        } else {
+          Logger.e("RNMBXRaster", "Expression for rasterArrayBand is null")
+        }
+      } else {
+          val value = styleValue.getString(VALUE_KEY)
+          if (value != null) {
+            layer.rasterArrayBand(value)
+          } else {
+            Logger.e("RNMBXRaster", "value for rasterArrayBand is null")
+          }
+      }
+    }
+
+    fun setRasterElevation(layer: RasterLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.rasterElevation(expression)
+        } else {
+          Logger.e("RNMBXRaster", "Expression for rasterElevation is null")
+        }
+      } else {
+          val value = styleValue.getDouble(VALUE_KEY)
+          if (value != null) {
+            layer.rasterElevation(value)
+          } else {
+            Logger.e("RNMBXRaster", "value for rasterElevation is null")
+          }
+      }
+    }
+
+
+    fun setRasterElevationTransition(layer: RasterLayer, styleValue: RNMBXStyleValue) {
+      val transition = styleValue.transition
+      if (transition != null) {
+        layer.rasterElevationTransition(transition);
       }
     }
 
@@ -4098,6 +4249,32 @@ object RNMBXStyleFactory {
       }
     }
 
+    fun setRasterParticleElevation(layer: RasterParticleLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.rasterParticleElevation(expression)
+        } else {
+          Logger.e("RNMBXRasterParticle", "Expression for rasterParticleElevation is null")
+        }
+      } else {
+          val value = styleValue.getDouble(VALUE_KEY)
+          if (value != null) {
+            layer.rasterParticleElevation(value)
+          } else {
+            Logger.e("RNMBXRasterParticle", "value for rasterParticleElevation is null")
+          }
+      }
+    }
+
+
+    fun setRasterParticleElevationTransition(layer: RasterParticleLayer, styleValue: RNMBXStyleValue) {
+      val transition = styleValue.transition
+      if (transition != null) {
+        layer.rasterParticleElevationTransition(transition);
+      }
+    }
+
     fun setVisibility(layer: HillshadeLayer, styleValue: RNMBXStyleValue ) {
         layer.visibility(Visibility.valueOf(styleValue.getEnumName()));
     }
@@ -4234,28 +4411,6 @@ object RNMBXStyleFactory {
       val transition = styleValue.transition
       if (transition != null) {
         layer.hillshadeAccentColorTransition(transition);
-      }
-    }
-
-    fun setVisibility(layer: ModelLayer, styleValue: RNMBXStyleValue ) {
-        layer.visibility(Visibility.valueOf(styleValue.getEnumName()));
-    }
-
-    fun setModelId(layer: ModelLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.modelId(expression)
-        } else {
-          Logger.e("RNMBXModel", "Expression for modelId is null")
-        }
-      } else {
-          val value = styleValue.getString(VALUE_KEY)
-          if (value != null) {
-            layer.modelId(value)
-          } else {
-            Logger.e("RNMBXModel", "value for modelId is null")
-          }
       }
     }
 
@@ -4586,8 +4741,43 @@ object RNMBXStyleFactory {
       }
     }
 
+    fun setVisibility(layer: ModelLayer, styleValue: RNMBXStyleValue ) {
+        layer.visibility(Visibility.valueOf(styleValue.getEnumName()));
+    }
+
+    fun setModelId(layer: ModelLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.modelId(expression)
+        } else {
+          Logger.e("RNMBXModel", "Expression for modelId is null")
+        }
+      } else {
+          val value = styleValue.getString(VALUE_KEY)
+          if (value != null) {
+            layer.modelId(value)
+          } else {
+            Logger.e("RNMBXModel", "value for modelId is null")
+          }
+      }
+    }
+
     fun setVisibility(layer: BackgroundLayer, styleValue: RNMBXStyleValue ) {
         layer.visibility(Visibility.valueOf(styleValue.getEnumName()));
+    }
+
+    fun setBackgroundPitchAlignment(layer: BackgroundLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.backgroundPitchAlignment(expression)
+        } else {
+          Logger.e("RNMBXBackground", "Expression for backgroundPitchAlignment is null")
+        }
+      } else {
+          layer.backgroundPitchAlignment(BackgroundPitchAlignment.valueOf(styleValue.getEnumName()))
+      }
     }
 
     fun setBackgroundColor(layer: BackgroundLayer, styleValue: RNMBXStyleValue ) {

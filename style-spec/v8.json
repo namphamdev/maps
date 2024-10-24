@@ -376,8 +376,8 @@
           "sdk-support": {
             "basic functionality": {
               "js": "3.0.0",
-              "android": "11.0.0",
-              "ios": "11.0.0"
+              "android": "10.0.0",
+              "ios": "10.0.0"
             }
           }
         },
@@ -386,8 +386,8 @@
           "sdk-support": {
             "basic functionality": {
               "js": "3.0.0",
-              "android": "11.0.0",
-              "ios": "11.0.0"
+              "android": "10.0.0",
+              "ios": "10.0.0"
             }
           }
         },
@@ -396,8 +396,8 @@
           "sdk-support": {
             "basic functionality": {
               "js": "3.0.0",
-              "android": "11.0.0",
-              "ios": "11.0.0"
+              "android": "10.0.0",
+              "ios": "10.0.0"
             }
           }
         }
@@ -428,8 +428,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -446,8 +446,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -466,8 +466,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -1663,8 +1663,8 @@
         },
         "expressions support": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -1687,8 +1687,8 @@
         },
         "expressions support": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -1760,8 +1760,8 @@
         },
         "`none` value": {
           "js": "3.4.0",
-          "android": "11.5.0",
-          "ios": "11.5.0"
+          "android": "10.5.0",
+          "ios": "10.5.0"
         }
       },
       "expression": {
@@ -2018,8 +2018,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "requires": [
@@ -5352,8 +5352,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -5374,8 +5374,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -5394,8 +5394,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -5416,8 +5416,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -5438,13 +5438,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -5464,13 +5464,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -5491,8 +5491,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -5511,8 +5511,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -5549,8 +5549,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "property-type": "data-constant"
@@ -5566,13 +5566,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.8.0",
-          "android": "11.8.0",
-          "ios": "11.8.0"
+          "android": "10.8.0",
+          "ios": "10.8.0"
         }
       },
       "expression": {
@@ -5592,13 +5592,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.7.0",
-          "android": "11.7.0",
-          "ios": "11.7.0"
+          "android": "10.7.0",
+          "ios": "10.7.0"
         },
         "data-driven styling": {
           "js": "3.7.0",
-          "android": "11.7.0",
-          "ios": "11.7.0"
+          "android": "10.7.0",
+          "ios": "10.7.0"
         }
       },
       "expression": {
@@ -5615,8 +5615,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.7.0",
-          "android": "11.8.0",
-          "ios": "11.8.0"
+          "android": "10.8.0",
+          "ios": "10.8.0"
         }
       },
       "property-type": "data-constant"
@@ -7075,13 +7075,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.7.0",
-          "android": "11.7.0",
-          "ios": "11.7.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.7.0",
-          "android": "11.7.0",
-          "ios": "11.7.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -7106,8 +7106,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.7.0",
-          "android": "11.7.0",
-          "ios": "11.7.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -7145,8 +7145,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {}
       },
@@ -7173,8 +7173,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -7194,8 +7194,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -7355,8 +7355,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -7381,8 +7381,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.1.0",
-          "android": "11.1.0",
-          "ios": "11.1.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       }
     },
@@ -7396,8 +7396,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.1.0",
-          "android": "11.2.0",
-          "ios": "11.2.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -7536,8 +7536,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.7.0",
-          "android": "11.7.0",
-          "ios": "11.7.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -7678,8 +7678,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -7705,8 +7705,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.8.0",
-          "android": "11.8.0",
-          "ios": "11.8.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -7786,8 +7786,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {
@@ -8030,8 +8030,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "property-type": "data-constant"
@@ -8051,13 +8051,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "transition": true,
@@ -8077,13 +8077,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "transition": true
@@ -8101,13 +8101,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "transition": true,
@@ -8125,13 +8125,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "transition": true
@@ -8150,13 +8150,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "transition": true
@@ -8174,8 +8174,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "default": "common-3d",
@@ -8190,8 +8190,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "property-type": "data-constant"
@@ -8204,8 +8204,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "property-type": "data-constant"
@@ -8223,8 +8223,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "property-type": "data-constant",
@@ -8245,13 +8245,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "transition": true
@@ -8270,13 +8270,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "transition": true
@@ -8295,13 +8295,13 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "transition": true
@@ -8319,8 +8319,8 @@
       "sdk-support": {
         "basic functionality": {
           "js": "3.0.0",
-          "android": "11.0.0",
-          "ios": "11.0.0"
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "property-type": "data-constant"

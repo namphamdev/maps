@@ -3,104 +3,11 @@
 @objc(RNMBXRasterParticleLayer)
 public class RNMBXRasterParticleLayer: RNMBXLayer {
   typealias LayerType = RasterParticleLayer
-	private let particlesSpeedGradient = Exp(.interpolate) {
-		Exp(.linear)
-		Exp(.rasterParticleSpeed)
-		1.5
-		Exp(.rgb) { 134.0; 163.0; 171.0 }
 
-		2.5
-		Exp(.rgb) { 134.0; 163.0; 171.0 }
-
-		4.63
-		Exp(.rgb) { 110.0; 143.0; 208.0 }
-
-		6.17
-		Exp(.rgb) { 15.0; 147.0; 167.0 }
-
-		7.72
-		Exp(.rgb) { 15.0; 147.0; 167.0 }
-
-		9.26
-		Exp(.rgb) { 57.0; 163.0; 57.0 }
-
-		10.29
-		Exp(.rgb) { 57.0; 163.0; 57.0 }
-
-		11.83
-		Exp(.rgb) { 194.0; 134.0; 62.0 }
-
-		13.37
-		Exp(.rgb) { 194.0; 134.0; 63.0 }
-
-		14.92
-		Exp(.rgb) { 200.0; 66.0; 13.0 }
-
-		16.46
-		Exp(.rgb) { 200.0; 66.0; 13.0 }
-
-		18.00
-		Exp(.rgb) { 210.0; 0.0; 50.0 }
-
-		20.06
-		Exp(.rgb) { 215.0; 0.0; 50.0 }
-
-		21.60
-		Exp(.rgb) { 175.0; 80.0; 136.0 }
-
-		23.66
-		Exp(.rgb) { 175.0; 80.0; 136.0 }
-
-		25.21
-		Exp(.rgb) { 117.0; 74.0; 147.0 }
-
-		27.78
-		Exp(.rgb) { 117.0; 74.0; 147.0 }
-
-		29.32
-		Exp(.rgb) { 68.0; 105.0; 141.0 }
-
-		31.89
-		Exp(.rgb) { 68.0; 105.0; 141.0 }
-
-		33.44
-		Exp(.rgb) { 194.0; 251.0; 119.0 }
-
-		42.18
-		Exp(.rgb) { 194.0; 251.0; 119.0 }
-
-		43.72
-		Exp(.rgb) { 241.0; 255.0; 109.0 }
-
-		48.87
-		Exp(.rgb) { 241.0; 255.0; 109.0 }
-
-		50.41
-		Exp(.rgb) { 255.0; 255.0; 255.0 }
-
-		57.61
-		Exp(.rgb) { 255.0; 255.0; 255.0 }
-
-		59.16
-		Exp(.rgb) { 255.0; 255.0; 255.0 }
-
-		68.93
-		Exp(.rgb) { 255.0; 255.0; 255.0 }
-
-		69.44
-		Exp(.rgb) { 255.0; 37.0; 255.0 }
-	}
-	
   override func makeLayer(style: Style) throws -> Layer {
 	  let sourceLayer = self.id.split(separator: "-", maxSplits: 1).map(String.init)[0]
 	  var layer = LayerType(id: self.id, source: sourceID!)
 		  .sourceLayer(sourceLayer)
-//		  .rasterParticleSpeedFactor(0.4)
-//		  .rasterParticleMaxSpeed(70)
-//		  .rasterParticleCount(2048)
-//		  .rasterParticleFadeOpacityFactor(0.8)
-//		  .rasterParticleResetRateFactor(0.4)
-		  .rasterParticleColor(particlesSpeedGradient)
     layer.source = sourceID
 	  
     return layer
