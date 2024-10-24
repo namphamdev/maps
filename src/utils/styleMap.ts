@@ -220,7 +220,6 @@ const styleMap = {
   fillExtrusionEmissiveStrengthTransition: StyleTypes.Transition,
   fillExtrusionLineWidth: StyleTypes.Constant,
   fillExtrusionLineWidthTransition: StyleTypes.Transition,
-  fillExtrusionCastShadows: StyleTypes.Constant,
   fillExtrusionAmbientOcclusionWallRadius: StyleTypes.Constant,
   fillExtrusionAmbientOcclusionWallRadiusTransition: StyleTypes.Transition,
 
@@ -298,7 +297,6 @@ const styleMap = {
   modelCutoffFadeRange: StyleTypes.Constant,
   modelId: StyleTypes.Constant,
 
-  backgroundPitchAlignment: StyleTypes.Enum,
   backgroundColor: StyleTypes.Color,
   backgroundColorTransition: StyleTypes.Transition,
   backgroundPattern: StyleTypes.Image,
@@ -306,6 +304,7 @@ const styleMap = {
   backgroundOpacityTransition: StyleTypes.Transition,
   backgroundEmissiveStrength: StyleTypes.Constant,
   backgroundEmissiveStrengthTransition: StyleTypes.Transition,
+  backgroundPitchAlignment: StyleTypes.Enum,
 
   skyType: StyleTypes.Enum,
   skyAtmosphereSun: StyleTypes.Constant,

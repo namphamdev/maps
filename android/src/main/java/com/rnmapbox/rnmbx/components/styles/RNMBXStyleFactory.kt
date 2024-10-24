@@ -569,8 +569,6 @@ object RNMBXStyleFactory {
                 setFillExtrusionLineWidth(layer, styleValue)
                 "fillExtrusionLineWidthTransition" ->
                 setFillExtrusionLineWidthTransition(layer, styleValue)
-              "fillExtrusionCastShadows" ->
-                setFillExtrusionCastShadows(layer, styleValue)
               "fillExtrusionAmbientOcclusionWallRadius" ->
                 setFillExtrusionAmbientOcclusionWallRadius(layer, styleValue)
                 "fillExtrusionAmbientOcclusionWallRadiusTransition" ->
@@ -815,8 +813,6 @@ object RNMBXStyleFactory {
           when (styleKey) {
               "visibility" ->
                 setVisibility(layer, styleValue)
-              "backgroundPitchAlignment" ->
-                setBackgroundPitchAlignment(layer, styleValue)
               "backgroundColor" ->
                 setBackgroundColor(layer, styleValue)
                 "backgroundColorTransition" ->
@@ -839,6 +835,8 @@ object RNMBXStyleFactory {
                 setBackgroundEmissiveStrength(layer, styleValue)
                 "backgroundEmissiveStrengthTransition" ->
                 setBackgroundEmissiveStrengthTransition(layer, styleValue)
+              "backgroundPitchAlignment" ->
+                setBackgroundPitchAlignment(layer, styleValue)
           }
         } catch (e: MapboxStyleException) {
           Logger.e(LOG_TAG, "Failed to update: $styleKey ${e.message}")
@@ -3728,24 +3726,6 @@ object RNMBXStyleFactory {
       }
     }
 
-    fun setFillExtrusionCastShadows(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.fillExtrusionCastShadows(expression)
-        } else {
-          Logger.e("RNMBXFillExtrusion", "Expression for fillExtrusionCastShadows is null")
-        }
-      } else {
-          val value = styleValue.getBoolean(VALUE_KEY)
-          if (value != null) {
-            layer.fillExtrusionCastShadows(value)
-          } else {
-            Logger.e("RNMBXFillExtrusion", "value for fillExtrusionCastShadows is null")
-          }
-      }
-    }
-
     fun setFillExtrusionAmbientOcclusionWallRadius(layer: FillExtrusionLayer, styleValue: RNMBXStyleValue ) {
       if (styleValue.isExpression()) {
         val expression = styleValue.getExpression()
@@ -4767,19 +4747,6 @@ object RNMBXStyleFactory {
         layer.visibility(Visibility.valueOf(styleValue.getEnumName()));
     }
 
-    fun setBackgroundPitchAlignment(layer: BackgroundLayer, styleValue: RNMBXStyleValue ) {
-      if (styleValue.isExpression()) {
-        val expression = styleValue.getExpression()
-        if (expression != null) {
-          layer.backgroundPitchAlignment(expression)
-        } else {
-          Logger.e("RNMBXBackground", "Expression for backgroundPitchAlignment is null")
-        }
-      } else {
-          layer.backgroundPitchAlignment(BackgroundPitchAlignment.valueOf(styleValue.getEnumName()))
-      }
-    }
-
     fun setBackgroundColor(layer: BackgroundLayer, styleValue: RNMBXStyleValue ) {
       if (styleValue.isExpression()) {
         val expression = styleValue.getExpression()
@@ -4882,6 +4849,19 @@ object RNMBXStyleFactory {
       val transition = styleValue.transition
       if (transition != null) {
         layer.backgroundEmissiveStrengthTransition(transition);
+      }
+    }
+
+    fun setBackgroundPitchAlignment(layer: BackgroundLayer, styleValue: RNMBXStyleValue ) {
+      if (styleValue.isExpression()) {
+        val expression = styleValue.getExpression()
+        if (expression != null) {
+          layer.backgroundPitchAlignment(expression)
+        } else {
+          Logger.e("RNMBXBackground", "Expression for backgroundPitchAlignment is null")
+        }
+      } else {
+          layer.backgroundPitchAlignment(BackgroundPitchAlignment.valueOf(styleValue.getEnumName()))
       }
     }
 

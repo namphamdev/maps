@@ -1626,10 +1626,6 @@ export interface FillExtrusionLayerStyleProps {
    */
   fillExtrusionLineWidthTransition?: Transition;
   /**
-   * Enable/Disable shadow casting for this layer
-   */
-  fillExtrusionCastShadows?: boolean;
-  /**
    * Shades area near ground and concave angles between walls where the radius defines only vertical impact. Default value 3.0 corresponds to height of one floor and brings the most plausible results for buildings.
    *
    * @requires lights, fillExtrusionEdgeRadius
@@ -2005,13 +2001,6 @@ export interface BackgroundLayerStyleProps {
    */
   visibility?: Value<Enum<VisibilityEnum, VisibilityEnumValues>>;
   /**
-   * Orientation of background layer.
-   */
-  backgroundPitchAlignment?: Value<
-    Enum<BackgroundPitchAlignmentEnum, BackgroundPitchAlignmentEnumValues>,
-    []
-  >;
-  /**
    * The color with which the background will be drawn.
    *
    * @disabledBy backgroundPattern
@@ -2046,6 +2035,13 @@ export interface BackgroundLayerStyleProps {
    * The transition affecting any changes to this layer’s backgroundEmissiveStrength property.
    */
   backgroundEmissiveStrengthTransition?: Transition;
+  /**
+   * Orientation of background layer.
+   */
+  backgroundPitchAlignment?: Value<
+    Enum<BackgroundPitchAlignmentEnum, BackgroundPitchAlignmentEnumValues>,
+    []
+  >;
 }
 export interface SkyLayerStyleProps {
   /**

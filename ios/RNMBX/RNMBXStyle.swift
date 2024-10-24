@@ -560,8 +560,6 @@ func fillExtrusionLayer(layer: inout FillExtrusionLayer, reactStyle:Dictionary<S
       self.setFillExtrusionLineWidth(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionLineWidthTransition") {
       self.setFillExtrusionLineWidthTransition(&layer, styleValue:styleValue);
-    } else if (prop == "fillExtrusionCastShadows") {
-      self.setFillExtrusionCastShadows(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionAmbientOcclusionWallRadius") {
       self.setFillExtrusionAmbientOcclusionWallRadius(&layer, styleValue:styleValue);
     } else if (prop == "fillExtrusionAmbientOcclusionWallRadiusTransition") {
@@ -821,8 +819,6 @@ func backgroundLayer(layer: inout BackgroundLayer, reactStyle:Dictionary<String,
 
     if (prop == "visibility") {
       self.setBackgroundStyleLayerVisibility(&layer, styleValue:styleValue);
-    } else if (prop == "backgroundPitchAlignment") {
-      self.setBackgroundPitchAlignment(&layer, styleValue:styleValue);
     } else if (prop == "backgroundColor") {
       self.setBackgroundColor(&layer, styleValue:styleValue);
     } else if (prop == "backgroundColorTransition") {
@@ -845,6 +841,8 @@ func backgroundLayer(layer: inout BackgroundLayer, reactStyle:Dictionary<String,
       self.setBackgroundEmissiveStrength(&layer, styleValue:styleValue);
     } else if (prop == "backgroundEmissiveStrengthTransition") {
       self.setBackgroundEmissiveStrengthTransition(&layer, styleValue:styleValue);
+    } else if (prop == "backgroundPitchAlignment") {
+      self.setBackgroundPitchAlignment(&layer, styleValue:styleValue);
     } else {
       Logger.log(level:.error, message: "Unexpected property \(prop) for layer: background")
     }
@@ -2530,15 +2528,6 @@ func setFillExtrusionLineWidthTransition(_ layer: inout FillExtrusionLayer, styl
     layer.fillExtrusionLineWidthTransition = styleValue.getTransition();
 }
 
-func setFillExtrusionCastShadows(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
-{
-      
-        
-          layer.fillExtrusionCastShadows = styleValue.mglStyleValueBoolean();
-        
-      
-}
-
 func setFillExtrusionAmbientOcclusionWallRadius(_ layer: inout FillExtrusionLayer, styleValue: RNMBXStyleValue)
 {
       #if RNMBX_11
@@ -2822,16 +2811,20 @@ func setRasterParticleResetRateFactor(_ layer: inout RasterParticleLayer, styleV
 
 func setRasterParticleElevation(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
 {
+      #if RNMBX_11
       
         
           layer.rasterParticleElevation = styleValue.mglStyleValueNumber();
         
       
+      #endif
 }
 
 func setRasterParticleElevationTransition(_ layer: inout RasterParticleLayer, styleValue: RNMBXStyleValue)
 {
+      #if RNMBX_11
     layer.rasterParticleElevationTransition = styleValue.getTransition();
+      #endif
 }
 
 
@@ -3116,15 +3109,6 @@ func setBackgroundStyleLayerVisibility(_ layer: inout BackgroundLayer, styleValu
     layer.visibility = styleValue.isVisible();
 }
 
-func setBackgroundPitchAlignment(_ layer: inout BackgroundLayer, styleValue: RNMBXStyleValue)
-{
-      
-        
-          layer.backgroundPitchAlignment = styleValue.mglStyleValueEnum(); 
-        
-      
-}
-
 func setBackgroundColor(_ layer: inout BackgroundLayer, styleValue: RNMBXStyleValue)
 {
       
@@ -3174,6 +3158,17 @@ func setBackgroundEmissiveStrength(_ layer: inout BackgroundLayer, styleValue: R
 func setBackgroundEmissiveStrengthTransition(_ layer: inout BackgroundLayer, styleValue: RNMBXStyleValue)
 {
     layer.backgroundEmissiveStrengthTransition = styleValue.getTransition();
+}
+
+func setBackgroundPitchAlignment(_ layer: inout BackgroundLayer, styleValue: RNMBXStyleValue)
+{
+      #if RNMBX_11
+      
+        
+          layer.backgroundPitchAlignment = styleValue.mglStyleValueEnum(); 
+        
+      
+      #endif
 }
 
 
