@@ -1,6 +1,6 @@
 #ifdef RCT_NEW_ARCH_ENABLED
 
-#import "RNMBXRasterSourceComponentView.h"
+#import "RNMBXRasterArraySourceComponentView.h"
 #import "RNMBXFabricHelpers.h"
 
 #import <React/RCTConversions.h>
@@ -103,7 +103,7 @@ using namespace facebook::react;
     }
     id attribution = RNMBXConvertFollyDynamicToId(newProps.attribution);
     if (attribution != nil) {
-        _view.attribution = attribution;
+        // _view.attribution = attribution;
     }
     
   [super updateProps:props oldProps:oldProps];
@@ -111,7 +111,7 @@ using namespace facebook::react;
 
 @end
 
-Class<RCTComponentViewProtocol> RNMBXRasterSourceCls(void)
+Class<RCTComponentViewProtocol> RNMBXRasterArraySourceCls(void)
 {
   return RNMBXRasterArraySourceComponentView.class;
 }

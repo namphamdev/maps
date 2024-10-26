@@ -1,6 +1,6 @@
 #ifdef RCT_NEW_ARCH_ENABLED
 
-#import "RNMBXRasterLayerComponentView.h"
+#import "RNMBXRasterParticleLayerComponentView.h"
 #import "RNMBXFabricHelpers.h"
 
 #import <React/RCTConversions.h>
@@ -14,7 +14,7 @@
 
 using namespace facebook::react;
 
-@interface RNMBXRasterLayerComponentView () <RCTRNMBXRasterLayerViewProtocol>
+@interface RNMBXRasterParticleLayerComponentView () <RCTRNMBXRasterParticleLayerViewProtocol>
 @end
 
 @implementation RNMBXRasterParticleLayerComponentView {
