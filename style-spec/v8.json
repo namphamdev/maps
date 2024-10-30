@@ -5075,10 +5075,14 @@
       "experimental": true,
       "sdk-support": {
         "basic functionality": {
-          "js": "3.7.0"
+          "js": "3.7.0",
+          "android": "10.0.0",
+          "ios": "10.0.0"
         },
         "data-driven styling": {
-          "js": "3.7.0"
+          "js": "3.7.0",
+          "android": "10.0.0",
+          "ios": "10.0.0"
         }
       },
       "expression": {

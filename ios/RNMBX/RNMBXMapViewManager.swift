@@ -88,6 +88,24 @@ extension RNMBXMapViewManager {
               resolver(["pointInView": [(point.x), (point.y)]])
           }
       }
+    
+    @objc public static func setFreeCameraOptions(
+        _ view: RNMBXMapView,
+        camLocation: CGPoint,
+        camAltitude: NSNumber,
+        location: CGPoint,
+		    altitude: NSNumber,
+        resolver: @escaping RCTPromiseResolveBlock,
+        rejecter: @escaping RCTPromiseRejectBlock) {
+          view.withMapboxMap { map in
+              let freeCam = map.freeCameraOptions
+              freeCam.location = map.coordinate(for: camLocation)
+              freeCam.altitude = camAltitude.doubleValue
+              freeCam.lookAtPoint(forLocation: map.coordinate(for: location), altitude: altitude.doubleValue)
+              map.freeCameraOptions = freeCam
+              resolver(true)
+          }
+      }
 
     @objc public static func setHandledMapChangedEvents(
         _ view: RNMBXMapView,

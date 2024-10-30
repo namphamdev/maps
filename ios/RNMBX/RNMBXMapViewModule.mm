@@ -139,6 +139,16 @@ RCT_EXPORT_METHOD(querySourceFeatures:(nonnull NSNumber*)viewRef sourceId:(NSStr
     } reject:reject methodName:@"querySourceFeatures"];
 }
 
+RCT_EXPORT_METHOD(setFreeCameraOptions:(nonnull NSNumber*)viewRef camLocation:(NSArray *)camLocation camAltitude:(nonnull NSNumber*)camAltitude location:(NSArray *)location altitude:(nonnull NSNumber*)altitude resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
+    [self withMapView:viewRef block:^(RNMBXMapView *view) {
+        NSNumber* a = [camLocation objectAtIndex:0];
+        NSNumber* b = [camLocation objectAtIndex:1];
+        NSNumber* c = [location objectAtIndex:0];
+        NSNumber* d = [location objectAtIndex:1];
+        [RNMBXMapViewManager setFreeCameraOptions:view camLocation:CGPointMake(a.floatValue, b.floatValue) camAltitude:camAltitude location:CGPointMake(c.floatValue, d.floatValue) altitude:altitude resolver:resolve rejecter:reject];
+    } reject:reject methodName:@"getPointInView"];
+}
+
 // Thanks to this guard, we won't compile this code when we build for the old architecture.
 #ifdef RCT_NEW_ARCH_ENABLED
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
