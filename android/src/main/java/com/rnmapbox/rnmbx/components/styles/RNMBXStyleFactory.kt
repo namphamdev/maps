@@ -4108,7 +4108,7 @@ object RNMBXStyleFactory {
           Logger.e("RNMBXRasterParticle", "Expression for rasterParticleCount is null")
         }
       } else {
-          val value = styleValue.getDouble(VALUE_KEY)
+          val value = styleValue.getDouble(VALUE_KEY).toLong()
           if (value != null) {
             layer.rasterParticleCount(value)
           } else {

@@ -825,8 +825,8 @@ class MapView extends NativeBridgeComponent(
   setFreeCameraOptions(config: FreeCameraOptions) {
     this._runNative<void>('setFreeCameraOptions', [
       config.camLocation,
-      config.point,
       config.camAltitude,
+      config.location,
       config.altitude,
     ]);
   }
