@@ -8,6 +8,7 @@ import LineLayer from '../../components/LineLayer';
 import CircleLayer from '../../components/CircleLayer';
 import { SymbolLayer } from '../../components/SymbolLayer';
 import RasterLayer from '../../components/RasterLayer';
+import RasterParticleLayer from '../../components/RasterParticleLayer';
 import BackgroundLayer from '../../components/BackgroundLayer';
 
 const Animated = {
@@ -22,6 +23,7 @@ const Animated = {
   CircleLayer: RNAnimated.createAnimatedComponent(CircleLayer),
   SymbolLayer: RNAnimated.createAnimatedComponent(SymbolLayer),
   RasterLayer: RNAnimated.createAnimatedComponent(RasterLayer),
+  RasterParticleLayer: RNAnimated.createAnimatedComponent(RasterParticleLayer),
   BackgroundLayer: RNAnimated.createAnimatedComponent(BackgroundLayer),
 };
 

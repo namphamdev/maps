@@ -25,6 +25,7 @@ enum class EventKeys(val value: String) {
     SHAPE_SOURCE_LAYER_CLICK("topMapboxShapeSourcePress"),
     VECTOR_SOURCE_LAYER_CLICK("topMapboxVectorSourcePress"),
     RASTER_SOURCE_LAYER_CLICK("topMapboxRasterSourcePress"),
+    RASTER_ARRAY_SOURCE_LAYER_CLICK("topMapboxRasterArraySourcePress"),
 
     // images event
     IMAGES_MISSING("topImageMissing"),

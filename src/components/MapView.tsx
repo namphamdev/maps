@@ -28,6 +28,7 @@ import { type Position } from '../types/Position';
 import { type Location } from '../modules/location/locationManager';
 
 import NativeBridgeComponent from './NativeBridgeComponent';
+import { makePoint } from '@rnmapbox/maps/src/utils/geoUtils';
 
 const { RNMBXModule } = NativeModules;
 const { EventTypes } = RNMBXModule;
@@ -470,6 +471,13 @@ type CallbablePropKeysWithoutOn = CallbablePropKeys extends `on${infer C}`
 
 type Debounced<F> = F & { clear(): void; flush(): void };
 
+export type FreeCameraOptions = {
+  camLocation: Position;
+  location: Position;
+  camAltitude: number;
+  altitude: number;
+};
+
 /**
  * MapView backed by Mapbox Native GL
  */
@@ -812,6 +820,25 @@ class MapView extends NativeBridgeComponent(
     console.warn(
       'MapView.setCamera is deprecated - please use Camera#setCamera',
     );
+  }
+
+  setFreeCameraOptions(config: FreeCameraOptions) {
+    this._runNative<void>('setFreeCameraOptions', [
+      config.camLocation,
+      config.camAltitude,
+      config.location,
+      config.altitude,
+    ]);
+  }
+
+  setAltitude(altitude: number) {
+    this._runNative<void>('setAltitude', [
+      altitude
+    ]);
+  }
+
+  async getFreeCameraOptions() {
+    return this._runNative<FreeCameraOptions>('getFreeCameraOptions');
   }
 
   _runNative<ReturnType>(

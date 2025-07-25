@@ -1042,6 +1042,7 @@ open class RNMBXMapView(private val mContext: Context, var mManager: RNMBXMapVie
             is HillshadeLayer -> match(layer.sourceId, layer.sourceLayer)
             is LineLayer -> match(layer.sourceId, layer.sourceLayer)
             is RasterLayer -> match(layer.sourceId, layer.sourceLayer)
+            is RasterParticleLayer -> match(layer.sourceId, layer.sourceLayer)
             is SymbolLayer -> match(layer.sourceId, layer.sourceLayer)
             else -> {
                 logE("MapView", "Layer type: $layer.type unknown.")
